@@ -3,7 +3,8 @@ var mui = require('material-ui');
 
 var { TextField, RaisedButton, Dialog } = mui;
 
-class LogIn extends React.Component {
+
+class Login extends React.Component {
 
   constructor() {
     super();
@@ -13,7 +14,7 @@ class LogIn extends React.Component {
   }
 
   componentDidMount() {
-    this.refs.logIn.show();
+    this.refs.login.show();
   }
 
   getStyles() {
@@ -52,7 +53,7 @@ class LogIn extends React.Component {
     return (
       <Dialog
         style={styles.dialog}
-        ref="logIn"
+        ref="login"
         title="Welcome to Hubster"
         actions={loginAction}>
           <TextField 
@@ -69,4 +70,4 @@ class LogIn extends React.Component {
   }
 }
 
-module.exports = LogIn;
+module.exports = Login;

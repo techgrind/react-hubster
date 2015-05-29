@@ -2,7 +2,7 @@ require('../css/app.css');
 var React = require('react');
 var Router = require('react-router');
 var RouteHandler = Router.RouteHandler;
-var AppLeftNav = require('./appLeftNav.js');
+var AppLeftNav = require('./AppLeftNav.js');
 var mui = require('material-ui');
 
 var Colors = mui.Styles.Colors;
@@ -31,8 +31,8 @@ class App extends React.Component {
   render() {
     var title =
       this.context.router.isActive('home') ? 'Home' :
-      this.context.router.isActive('logIn') ? 'Log In' :
-      this.context.router.isActive('signUp') ? 'Sign Up' : '';
+      this.context.router.isActive('login') ? 'Log In' :
+      this.context.router.isActive('sign_up') ? 'Sign Up' : '';
 
 
     return (

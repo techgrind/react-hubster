@@ -2,7 +2,7 @@ var React = require('react');
 var mui = require('material-ui');
 var StyleResizable = mui.Mixins.StyleResizable;
 
-var { TextField, RaisedButton, clearFix } = mui;
+var { TextField, RaisedButton, FlatButton, clearFix } = mui;
 
 var SignUp = React.createClass ({
 
@@ -50,7 +50,7 @@ var SignUp = React.createClass ({
           style={styles.inp}
           label="Submit"
           secondary={true} />
-        <RaisedButton
+        <FlatButton
           style={styles.inp}
           label="Cancel"
           primary={true} />

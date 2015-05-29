@@ -5,9 +5,9 @@ var {MenuItem, LeftNav} = mui;
 var {Colors, Spacing, Typography} = mui.Styles;
 
 var menuItems = [
-  { route: 'logIn', text: 'Log In' },
+  { route: 'login', text: 'Log In' },
   { type: MenuItem.Types.SUBHEADER, text: 'New User' },
-  { route: 'signUp', text: 'Sign Up'}
+  { route: 'sign_up', text: 'Sign Up'}
 ];
 
 class AppLeftNav extends React.Component {

@@ -2,7 +2,7 @@
   "name": "new-hubster",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "build/app.js",
   "jest": {
     "scriptPreprocessor": "<rootDir>/preprocessor.js",
     "unmockedModulePathPatterns": [

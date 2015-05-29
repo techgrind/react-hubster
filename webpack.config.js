@@ -3,7 +3,7 @@ var node_modules = path.resolve(__dirname, 'node_modules');
 
 
 var config = {
-  entry: ['webpack/hot/dev-server', path.resolve(__dirname, 'app/main.js')],
+  entry: ['webpack/hot/dev-server', path.resolve(__dirname, 'scripts/app.js')],
   output: {
       path: path.resolve(__dirname, 'build'),
       filename: 'bundle.js',

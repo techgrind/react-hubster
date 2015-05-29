@@ -5,14 +5,14 @@ var Redirect = Router.Redirect;
 var DefaultRoute = Router.DefaultRoute;
 
 var Main = require('./components/app.js');
-var Home = require('./components/pages/home.js');
-var LogIn = require('./components/pages/logIn.js');
-var SignUp = require('./components/pages/signUp.js');
+var Home = require('./components/pages/Home.js');
+var Login = require('./components/pages/Login.js');
+var SignUp = require('./components/pages/SignUp.js');
 
 var AppRoutes = (
   <Route name="root" path="/" handler={Main}>
-    <Route name="logIn" handler={LogIn} />
-    <Route name="signUp" handler={SignUp} />
+    <Route name="login" handler={Login} />
+    <Route name="sign_up" handler={SignUp} />
     <DefaultRoute name="home" handler={Home} />
   </Route>
 );
