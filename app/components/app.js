@@ -1,3 +1,4 @@
+require('../css/app.css');
 var React = require('react');
 var Router = require('react-router');
 var RouteHandler = Router.RouteHandler;
@@ -41,7 +42,10 @@ class App extends React.Component {
           title={title}
           zDepth={0} />
         <AppLeftNav ref="leftNav" />
-        <RouteHandler />
+        
+        <div className="content">
+          <RouteHandler />
+        </div>
       </AppCanvas>
     );
   }
