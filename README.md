@@ -2,14 +2,16 @@
 
 This is a start of the hubster project written in React.
 
-Install
+Install:
 
 `npm install`
 
-Dev Server
+
+Dev Server:
 
 `npm run dev`
 
-Testing
+
+Testing:
 
 `npm run test`
