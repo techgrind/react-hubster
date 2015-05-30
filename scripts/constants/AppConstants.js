@@ -5,7 +5,7 @@ var APIRoot = "http://localhost:3000";
 var AppConstants = {
 
   APIEndpoints: {
-    LOGIN: APIRoot + "/auth/login",
+    LOGIN: APIRoot + "/auth/sign_in",
     REGISTRATION: APIRoot + "/auth/users"
   },
 

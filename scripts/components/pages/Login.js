@@ -32,7 +32,6 @@ class Login extends React.Component {
   }
 
   handleSubmit() {
-    debugger;
     var email = this.state.email;
     var password = this.state.password;
     SessionActionCreators.login(email, password);

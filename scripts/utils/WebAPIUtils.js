@@ -8,7 +8,7 @@ var WebAPIUtils = {
 
   login: function(email, password) {
     request.post(APIEndpoints.LOGIN)
-      .send({ username: email, password: password })
+      .send({ email: email, password: password })
       .set('Accept', 'application/json')
       .end(function(error, res) {
         if (res) {
@@ -16,7 +16,7 @@ var WebAPIUtils = {
             var errorMsgs = _getErrors(res);
             ServerActionCreators.receiveLogin(null, errorMsgs);
           } else {
-            json = JSON.parse(res.text);
+            var json = JSON.parse(res.text);
             ServerActionCreators.receiveLogin(json, null);
           }
         }
