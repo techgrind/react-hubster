@@ -1,20 +1,41 @@
 var React = require('react');
+var SessionActionCreators = require('../../actions/SessionActionCreators.js');
+var SessionStore = require('../../stores/SessionStore.js');
 var mui = require('material-ui');
 
-var { TextField, RaisedButton, Dialog } = mui;
-
+var { TextField, RaisedButton, FlatButton, Dialog } = mui;
 
 class Login extends React.Component {
 
   constructor() {
     super();
     this.state = {
-      modal: true
+      modal: false,
+      email: '',
+      password: ''
     };
   }
 
   componentDidMount() {
     this.refs.login.show();
+    SessionStore.addChangeListener(this.handleChange);
+  }
+
+  componentWillUnmount() {
+    SessionStore.removeChangeListener(this.handleChange);
+  }
+
+  handleChange(name, event) {
+    var change = {};
+    change[name] = event.target.value;
+    this.setState(change);
+  }
+
+  handleSubmit() {
+    debugger;
+    var email = this.state.email;
+    var password = this.state.password;
+    SessionActionCreators.login(email, password);
   }
 
   getStyles() {
@@ -37,33 +58,32 @@ class Login extends React.Component {
 
     var styles = this.getStyles();
 
-    var loginAction = [
-      <RaisedButton
-        key='1'
-        style={styles.button}
-        label="Submit"
-        secondary={true} />,
-      <RaisedButton
-        key='2'
-        style={styles.button}
-        label="Cancel"
-        primary={true} />
-    ];
-
     return (
       <Dialog
         style={styles.dialog}
         ref="login"
-        title="Welcome to Hubster"
-        actions={loginAction}>
-          <TextField 
-            style={styles.input}
-            floatingLabelText="Email"
-            hintText="john.smith@hubster.com" />
-          <TextField 
-            style={styles.input}
-            floatingLabelText="Password"
-            hintText="********" />
+        title="Welcome to Hubster">
+        <TextField
+          style={styles.input}
+          value={this.state.email}
+          floatingLabelText="Email"
+          hintText="john.smith@hubster.io"
+          onChange={this.handleChange.bind(this, 'email')}
+          onEnterKeyDown={this.handleSubmit.bind(this)} />
+        <TextField 
+          type="password"
+          style={styles.input}
+          value={this.state.password}
+          floatingLabelText="Password"
+          hintText="********"
+          onChange={this.handleChange.bind(this, 'password')}
+          onEnterKeyDown={this.handleSubmit.bind(this)} />
+        <RaisedButton
+          key="1"
+          style={styles.button}
+          label="Submit"
+          onTouchTap={this.handleSubmit.bind(this)}
+          secondary={true} />
       </Dialog>
 
     );
